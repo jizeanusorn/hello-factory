@@ -1,0 +1,14 @@
+clock1,clock2,clock3
+TH,US,UK
+
+Available Options (10 cities):
+TH - Bangkok Thailand (UTC+7)
+US - New York USA (UTC-5)
+UK - London UK (UTC+0)
+JP - Tokyo Japan (UTC+9)
+CN - Shanghai China (UTC+8)
+SG - Singapore (UTC+8)
+AU - Sydney Australia (UTC+10)
+DE - Berlin Germany (UTC+1)
+FR - Paris France (UTC+1)
+AE - Dubai UAE (UTC+4)
