@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.gitignore
+README.md
+DEPLOYMENT.md
+.env
+.env.local
+.vscode
+.idea
+*.log
+.DS_Store
+__figma__entrypoint__.ts
+src/imports/*.png
