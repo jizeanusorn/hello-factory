@@ -1,27 +1,17 @@
-FROM node:20-alpine
-
+FROM node:20-alpine AS build
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm
+COPY package.json ./
+RUN npm install --legacy-peer-deps \
+ && npm install --no-save --legacy-peer-deps react@18.3.1 react-dom@18.3.1
 
-# Copy package files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
-
-# Install dependencies
-RUN pnpm install --frozen-lockfile
-
-# Copy source code
 COPY . .
+RUN npm run build
 
-# Build the application
-RUN pnpm build
-
-# Install a simple HTTP server
+FROM node:20-alpine
+WORKDIR /app
 RUN npm install -g serve
-
-# Expose port
+COPY --from=build /app/dist ./dist
+ENV PORT=8080
 EXPOSE 8080
-
-# Serve the built files
-CMD ["serve", "-s", "dist", "-l", "8080"]
+CMD ["sh", "-c", "serve -s dist -l ${PORT}"]
