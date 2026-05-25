@@ -128,7 +128,7 @@ export default function App() {
             Hello Factory
           </h1>
           <p className="text-purple-200/40 tracking-widest uppercase text-xs">
-            Where Ideas Come to Life
+            SOFTWARE FACTORY GOES LIVE
           </p>
         </motion.div>
       </div>
