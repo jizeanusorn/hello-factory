@@ -9,7 +9,7 @@ test('App should render all 3 cities from Excel config', async ({ page }) => {
   const fileChooser = await fileChooserPromise;
   await fileChooser.setFiles(fileURLToPath(new URL('./fixtures/clock-config-3cities.csv', import.meta.url)));
 
-  await expect(page.getByText('Berlin')).toBeVisible();
-  await expect(page.getByText('Singapore')).toBeVisible();
-  await expect(page.getByText('Shanghai')).toBeVisible();
+  await expect(page.getByText('Berlin').first()).toBeVisible();
+  await expect(page.getByText('Singapore').first()).toBeVisible();
+  await expect(page.getByText('Shanghai').first()).toBeVisible();
 });
