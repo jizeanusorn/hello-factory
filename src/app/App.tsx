@@ -140,6 +140,7 @@ export default function App() {
         transition={{ duration: 1, delay: 0.8 }}
         className="relative z-10 flex gap-8 px-8 pb-4"
       >
+        <WorldClock cityCode={clockConfig.clock1} size="small" />
         <WorldClock cityCode={clockConfig.clock2} size="small" />
         <WorldClock cityCode={clockConfig.clock3} size="small" />
       </motion.div>
